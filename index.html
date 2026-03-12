@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- CSP reforçado e seguro (sem unsafe-inline) -->
+    <meta http-equiv="Content-Security-Policy" 
+          content="default-src 'self'; 
+                   script-src 'self' 'unsafe-inline'; 
+                   style-src 'self' https://fonts.googleapis.com; 
+                   font-src https://fonts.gstatic.com;">
+
+    <title>Meu Primeiro Site - Alta Performance</title>
+    <meta name="description" content="Guia prático de construção de sites velozes.">
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- 🔥 Pré-carregamento da imagem hero -->
+    <link rel="preload" href="imagem-principal.jpg" as="image" fetchpriority="high">
+
+    <!-- 🔥 Pré-carregamento do CSS (sem inline JS) -->
+    <link rel="preload" href="estilo.css" as="style">
+
+    <!-- SEO + Social -->
+    <meta property="og:title" content="Meu Primeiro Site - Alta Performance">
+    <meta property="og:description" content="Guia prático de construção de sites velozes.">
+    <meta property="og:image" content="https://seusite.com/imagem-principal.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://seusite.com/">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="canonical" href="https://seusite.com/">
+    <meta name="robots" content="index, follow">
+
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main>
+        <h1>Bem-vindo!</h1>
+        <p>Este é o meu parágrafo otimizado.</p>
+
+        <picture>
+            <source srcset="imagem-principal.webp" type="image/webp">
+            <img src="imagem-principal.jpg" 
+                 width="800" 
+                 height="600" 
+                 alt="Foto de boas-vindas com fundo moderno e cores vibrantes"
+                 fetchpriority="high"
+                 loading="eager">
+        </picture>
+    </main>
+
+    <!-- Fallback caso JavaScript esteja desativado -->
+    <noscript>
+        <link rel="stylesheet" href="estilo.css">
+    </noscript>
+</body>
+</html>
