@@ -1,2 +1,3 @@
 # one_page_head_strong
-100% PageSpeed Insights
+
+Landing page otimizada para **100% PageSpeed Insights**.
